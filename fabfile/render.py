@@ -64,7 +64,7 @@ def copytext_js():
     with open('www/js/copy.js', 'w') as f:
         f.write(js)
 
-@task(default=True)
+@task()
 def render_all():
     """
     Render HTML templates and compile assets.
@@ -130,6 +130,7 @@ def render_stories(compiled_includes):
     from flask import g, url_for
     from render_utils import make_context
 
+    import ipdb; ipdb.set_trace()
     context = make_context()
 
     local('rm -rf .stories_html')
